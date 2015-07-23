@@ -1,25 +1,27 @@
 <html>
-  <head>
-    <title>shiftcheckbox - Jquery Plugin</title>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="js/jquery.shiftcheckbox.js"></script>
-    <script type="text/javascript">
-      $(document).ready (
-        function () {
-          $('input:checkbox').shiftcheckbox();
-        });
-    </script>
-  </head>
-  <body>
-  <div style="float: left; position: relative; width: 35%">
-        <ol>
-            <li>Select any checkbox
-            <li>Now press SHIFT and select another checkbox above or below the previously selected checkbox
-        </ol>
-    </div>
-  <fieldset style="width: 15%">
-    <legend>Select Range</legend>
-    <!-- 
+<head>
+<title>shiftcheckbox - Jquery Plugin</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="js/jquery.shiftcheckbox.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#range1 input:checkbox').shiftcheckbox();
+		$('#range2 input:checkbox').shiftcheckbox();
+	});
+</script>
+</head>
+<body>
+	<div>
+		<ol>
+			<li>Select any checkbox
+			<li>Now press SHIFT and select another checkbox above or below
+				the previously selected checkbox
+		</ol>
+	</div>
+	<div id="range1">
+		<fieldset style="width: 15%">
+			<legend>Select Range</legend>
+			<!-- 
     &nbsp;<input type="checkbox" name="rating[]" value="1" class="input shiftCheckbox" />1<br />
     &nbsp;<input type="checkbox" name="rating[]" value="2" class="input shiftCheckbox" />2<br />
     &nbsp;<input type="checkbox" name="rating[]" value="3" class="input shiftCheckbox" />3<br />
@@ -34,23 +36,29 @@
     &nbsp;<input type="checkbox" name="rating[]" value="12" class="input shiftCheckbox" />12<br />
     &nbsp;<input type="checkbox" name="rating[]" value="13" class="input shiftCheckbox" />13<br />
     -->
-    
-    &nbsp;<input type="checkbox" />1<br />
-    &nbsp;<input type="checkbox" />2<br />
-    &nbsp;<input type="checkbox" />3<br />
-    &nbsp;<input type="checkbox" />4<br />
-    &nbsp;<input type="checkbox" />5<br />
-    &nbsp;<input type="checkbox" />6<br />
-    &nbsp;<input type="checkbox" />7<br />
-    &nbsp;<input type="checkbox" />8<br />
-    &nbsp;<input type="checkbox" />9<br />
-    &nbsp;<input type="checkbox" />10<br />
-    &nbsp;<input type="checkbox" />11<br />
-    &nbsp;<input type="checkbox" />12<br />
-    &nbsp;<input type="checkbox" />13<br />
-    
-    </fieldset>
-  </body>
-  <br clear="all" /><br />
-  <a href="http://www.sanisoft.com/blog/2009/07/02/jquery-shiftcheckbox-plugin">view the former plugin</a>
+			&nbsp;<input type="checkbox" />1<br /> &nbsp;<input type="checkbox" />2<br />
+			&nbsp;<input type="checkbox" />3<br /> &nbsp;<input type="checkbox" />4<br />
+			&nbsp;<input type="checkbox" />5<br /> &nbsp;<input type="checkbox" />6<br />
+			&nbsp;<input type="checkbox" />7<br /> &nbsp;<input type="checkbox" />8<br />
+			&nbsp;<input type="checkbox" />9<br /> &nbsp;<input type="checkbox" />10<br />
+			&nbsp;<input type="checkbox" />11<br /> &nbsp;<input
+				type="checkbox" />12<br /> &nbsp;<input type="checkbox" />13<br />
+		</fieldset>
+	</div>
+	<div id="range2">
+		<fieldset style="width: 15%">
+			<legend>Select Range</legend>
+			&nbsp;<input type="checkbox" />1<br /> &nbsp;<input type="checkbox" />2<br />
+			&nbsp;<input type="checkbox" />3<br /> &nbsp;<input type="checkbox" />4<br />
+			&nbsp;<input type="checkbox" />5<br /> &nbsp;<input type="checkbox" />6<br />
+			&nbsp;<input type="checkbox" />7<br /> &nbsp;<input type="checkbox" />8<br />
+			&nbsp;<input type="checkbox" />9<br /> &nbsp;<input type="checkbox" />10<br />
+		</fieldset>
+	</div>
+</body>
+<br clear="all" />
+<br />
+<a
+	href="http://www.sanisoft.com/blog/2009/07/02/jquery-shiftcheckbox-plugin">view
+	the former plugin</a>
 </html>

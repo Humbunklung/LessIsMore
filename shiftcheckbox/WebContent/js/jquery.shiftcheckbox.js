@@ -29,45 +29,42 @@
  */
 
 (function($) {
-	// global...
-	var g_shiftcheckbox_prevChecked = null;
-	var $g_shiftcheckbox_selector = null;
 	$.fn.shiftcheckbox = function() {
-		$g_shiftcheckbox_selector = $(this);
-		$(this).bind("click", handleClick);
+		$(this).bind("click", {prevChecked: null, selector: $(this)}, 
+				handleClick);
 	};
 
 	function handleClick(event) {
 		var checkStatus = this.checked;
 		// check whether user has pressed shift
 		if (event.shiftKey) {
-			if (g_shiftcheckbox_prevChecked != null) {
+			if (event.data.prevChecked != null) {
 				// get the current checkbox number
 				var currentChecked;
-				currentChecked = $g_shiftcheckbox_selector.index($(this));
-				if (currentChecked < g_shiftcheckbox_prevChecked) {
-					$g_shiftcheckbox_selector.each(function() {
-						var currIdx = $g_shiftcheckbox_selector.index($(this));
+				currentChecked = event.data.selector.index($(this));
+				if (currentChecked < event.data.prevChecked) {
+					event.data.selector.each(function() {
+						var currIdx = event.data.selector.index($(this));
 						if (currIdx >= currentChecked
-								&& currIdx <= g_shiftcheckbox_prevChecked) {
+								&& currIdx <= event.data.prevChecked) {
 							this.checked = checkStatus;
 						}
 					});
 				} else {
-					$g_shiftcheckbox_selector.each(function() {
-						var currIdx = $g_shiftcheckbox_selector.index($(this));
-						if (currIdx >= g_shiftcheckbox_prevChecked
+					event.data.selector.each(function() {
+						var currIdx = event.data.selector.index($(this));
+						if (currIdx >= event.data.prevChecked
 								&& currIdx <= currentChecked) {
 							this.checked = checkStatus;
 						}
 					});
 				}
 
-				g_shiftcheckbox_prevChecked = currentChecked;
+				event.data.prevChecked = currentChecked;
 			}
 		} else {
 			if (checkStatus) {
-				g_shiftcheckbox_prevChecked = $g_shiftcheckbox_selector
+				event.data.prevChecked = event.data.selector
 						.index($(this));
 			}
 		}
