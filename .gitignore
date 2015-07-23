@@ -1,0 +1,16 @@
+# === Eclipse ===
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+eclipse-local.bat
+
+# === maven ===
+target/
+
+# === IntelliJ ===
+*.iml
+*.ipr
+*.iws
+.idea/
