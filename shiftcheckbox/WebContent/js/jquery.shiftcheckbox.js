@@ -29,6 +29,7 @@
  */
 
 (function($) {
+	// global...
 	var g_shiftcheckbox_prevChecked = null;
 	var $g_shiftcheckbox_selector = null;
 	$.fn.shiftcheckbox = function() {
